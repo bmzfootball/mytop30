@@ -685,15 +685,40 @@ details p{margin:0 0 15px;color:#737373;line-height:1.7}
   }
 }
 
+
+
 @media(max-width:700px){
-  .export-share-wrap{
-    width:100%;
-    display:flex;
+  .tool-footer .export-share-wrap{
+    position:relative;
+    flex:0 0 100% !important;
+    width:100% !important;
+    max-width:100%;
+    display:block !important;
+    margin:0 !important;
+  }
+
+  .tool-footer .export-share-main{
+    display:flex !important;
+    flex:0 0 100% !important;
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    margin:0 !important;
+    align-items:center;
     justify-content:center;
   }
-  .export-share-main{
-    margin-left:auto;
-    margin-right:auto;
+
+  .tool-footer .export-share-menu{
+    left:50% !important;
+    right:auto !important;
+    transform:translateX(-50%);
+    width:min(330px,calc(100vw - 32px));
+    text-align:left;
+  }
+
+  .tool-footer .export-share-main .fa-download{
+    margin-left:4px;
+    flex:0 0 auto;
   }
 }
 
@@ -1218,21 +1243,21 @@ details p{margin:0 0 15px;color:#737373;line-height:1.7}
     $("heroPreview").src = lang === "fr" ? FR_BG : EN_BG;
     $("printBg").src = lang === "fr" ? FR_BG : EN_BG;
     const extraText = lang === "fr" ? {
-      main:"Télécharger & partager ↗", pngTitle:"Télécharger en PNG", pngSub:"Image prête à publier", pdfTitle:"Télécharger en PDF", pdfSub:"Format A4 paysage", printTitle:"Imprimer", printSub:"Ouvrir la fenêtre d’impression", shareTitle:"Partager l'image", shareSub:"Instagram, X, WhatsApp…",
+      main:"Télécharger & partager", pngTitle:"Télécharger en PNG", pngSub:"Image prête à publier", pdfTitle:"Télécharger en PDF", pdfSub:"Format A4 paysage", printTitle:"Imprimer", printSub:"Ouvrir la fenêtre d’impression", shareTitle:"Partager l'image", shareSub:"Instagram, X, WhatsApp…",
       legalTitle:"SITE INDÉPENDANT — MENTION IMPORTANTE",
       legal1:"BMZFootball est un site indépendant consacré au football, créé à des fins de divertissement et d’expression d’opinion.",
       legal2:"Les noms, marques, logos et autres éléments distinctifs éventuellement mentionnés sur le site appartiennent à leurs titulaires respectifs. Leur mention sert uniquement à identifier les personnes, clubs, compétitions ou sujets auxquels le contenu fait référence. Aucun droit de propriété ni aucune affiliation officielle n’est revendiqué.",
       legal3:"Les classements créés reflètent uniquement l’opinion de leurs auteurs. Dans cette version du site, les noms saisis sont enregistrés localement dans le navigateur de l’utilisateur et ne sont pas transmis à un serveur par l’outil de classement.",
       legal4:"Pour toute question relative à des droits, à une marque ou à un contenu, un moyen de contact dédié devra être indiqué par l’éditeur du site avant toute mise en production commerciale."
     } : {
-      main:"Download & share ↗", pngTitle:"Download PNG", pngSub:"Ready-to-post image", pdfTitle:"Download PDF", pdfSub:"A4 landscape format", printTitle:"Print", printSub:"Open the print dialog", shareTitle:"Share image", shareSub:"Instagram, X, WhatsApp…",
+      main:"Download & share", pngTitle:"Download PNG", pngSub:"Ready-to-post image", pdfTitle:"Download PDF", pdfSub:"A4 landscape format", printTitle:"Print", printSub:"Open the print dialog", shareTitle:"Share image", shareSub:"Instagram, X, WhatsApp…",
       legalTitle:"INDEPENDENT WEBSITE — IMPORTANT NOTICE",
       legal1:"BMZFootball is an independent football website created for entertainment and personal-opinion purposes.",
       legal2:"Any names, trademarks, logos or other distinctive signs mentioned on the website remain the property of their respective rights holders. They are referenced solely to identify the people, clubs, competitions or subjects discussed. No ownership or official affiliation is claimed.",
       legal3:"Rankings reflect only the opinions of their authors. In this version of the website, names entered in the ranking are stored locally in the user’s browser and are not transmitted to a server by the ranking tool.",
       legal4:"For any question concerning rights, trademarks or content, the website publisher should provide a dedicated contact method before any commercial launch."
     };
-    $("exportShareBtn").textContent = extraText.main;
+    $("exportShareBtn").innerHTML = `${extraText.main} <i class="fa-solid fa-download" aria-hidden="true"></i>`;
     $("pngTitle").textContent = extraText.pngTitle; $("pngSub").textContent = extraText.pngSub;
     $("pdfMenuTitle").textContent = extraText.pdfTitle; $("pdfMenuSub").textContent = extraText.pdfSub;
     $("printMenuTitle").textContent = extraText.printTitle; $("printMenuSub").textContent = extraText.printSub;
