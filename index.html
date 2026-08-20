@@ -27,6 +27,7 @@
 <meta name="twitter:image:alt" content="Aperçu du générateur de classement Top 30 BMZFootball">
 
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -683,6 +684,19 @@ details p{margin:0 0 15px;color:#737373;line-height:1.7}
     padding-bottom:.12%;
   }
 }
+
+@media(max-width:700px){
+  .export-share-wrap{
+    width:100%;
+    display:flex;
+    justify-content:center;
+  }
+  .export-share-main{
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -797,7 +811,7 @@ details p{margin:0 0 15px;color:#737373;line-height:1.7}
         <span class="hint" id="hintText">Tu peux écrire directement, utiliser ↑ ↓, ou glisser les lignes sur ordinateur.</span>
         <button class="btn btn-light" id="resetBtn" type="button">Réinitialiser</button>
         <div class="export-share-wrap">
-          <button class="btn btn-gold export-share-main" id="exportShareBtn" type="button" aria-expanded="false">Télécharger & partager ↗</button>
+          <button class="btn btn-gold export-share-main" id="exportShareBtn" type="button" aria-expanded="false">Télécharger & partager <i class="fa-solid fa-download" aria-hidden="true"></i></button>
           <div class="export-share-menu" id="exportShareMenu" hidden>
             <button type="button" id="downloadPngBtn"><span class="menu-icon">▣</span><span><b id="pngTitle">Télécharger en PNG</b><small id="pngSub">Image prête à publier</small></span></button>
             <button type="button" id="downloadPdfBtn"><span class="menu-icon">↓</span><span><b id="pdfMenuTitle">Télécharger en PDF</b><small id="pdfMenuSub">Format A4 paysage</small></span></button>
